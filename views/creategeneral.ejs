@@ -1,0 +1,39 @@
+<h1 class="heading">Create New Post</h1>
+<%- include ("./partials/errorcreate"); %>
+<form action="/blog/create" method="POST" class="create-form">
+  <div class="create-group">
+    <label for="text" class="create-field">Username</label>
+    <input
+      readonly
+      type="text"
+      id="username"
+      name="username"
+      class="create-field"
+      value="<%= username %>"
+    />
+  </div>
+  <div class="create-group">
+    <label for="text" class="create-field">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Enter Title"
+      class="create-field"
+      value="<%= typeof title != 'undefined' ? title : '' %>"
+    />
+  </div>
+  <div class="create-group">
+    <label for="text" class="create-field">Article</label>
+    <textarea
+      type="text"
+      id="article"
+      name="article"
+      placeholder="Enter Article"
+      class="create-field"
+    >
+    <%= typeof article != 'undefined' ? article : '' %>
+    </textarea>
+  </div>
+  <button class="auth-submit">Post</button>
+</form>

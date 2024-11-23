@@ -1,0 +1,29 @@
+form.create-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.create-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1vh 0;
+}
+
+.create-group > input {
+  width: 100%;
+}
+
+.create-group > textarea {
+  max-width: 100%;
+  width: 100%;
+}
+textarea {
+  min-height: 250px;
+}
+
+select {
+  width: 100%;
+}

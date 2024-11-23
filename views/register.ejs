@@ -1,0 +1,80 @@
+<div class="reglog">
+  <h1>Register</h1>
+  <%- include ("./partials/messages"); %>
+  <form action="/users/register" method="POST" class="auth-form">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input
+        type="name"
+        id="name"
+        name="name"
+        placeholder="Enter Name"
+        value="<%= typeof name != 'undefined' ? name : '' %>"
+      />
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter Email"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+      />
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Create Password"
+        value="<%= typeof password != 'undefined' ? password : '' %>"
+      />
+    </div>
+    <div class="input-group">
+      <label for="password2">Confirm Password</label>
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        placeholder="Confirm Password"
+        value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+      />
+    </div>
+    <div class="input-group2">
+      <p>Subjects</p>
+      <%for(var i = 0; i < subjects.length; i++){%>
+      <div>
+        <input
+          type="checkbox"
+          name="<%=subjects[i] %>"
+
+          <%
+          if(selectedsubjects.includes(subjects[i])){%>
+
+        <%= "checked" %> <%}%> />
+        <label for="<%=subjects[i] %>"><%=subjects[i] %></label>
+      </div>
+      <%}%>
+    </div>
+    <div class="input-group2">
+      <p>Role</p>
+      <div>
+        <div>
+          <input type="radio" name="role" value="student" checked />
+          <label for="role" class="role-label">Student</label>
+        </div>
+
+        <div>
+          <input type="radio" name="role" value="mentor" />
+          <label for="role" class="role-label">Mentor</label>
+        </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <button type="submit" class="auth-submit">Register</button>
+    </div>
+  </form>
+  <p class="regloglink">Have An Account? <a href="/users/login">Login</a></p>
+</div>

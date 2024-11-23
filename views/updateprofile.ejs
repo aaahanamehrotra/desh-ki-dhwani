@@ -1,0 +1,60 @@
+<div class="reglog">
+  <h1>Update Profile</h1>
+  <%- include ("./partials/messages"); %>
+  <form action="/users/updprofile" method="POST" class="auth-form">
+<div class="input-group">
+    <label for="name">Name</label>
+    <input
+      type="name"
+      id="name"
+      name="name"
+      placeholder="Enter Name"
+      value="<%= typeof user != 'undefined' ? user.name : '' %>"
+    />
+</div>
+<div class="input-group">
+    <label for="email">Email</label>
+    <input
+      readonly
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter Email"
+      value="<%= typeof user != 'undefined' ? user.email : '' %>"
+    />
+</div>
+    <div class="input-group2">
+      <p>Subjects</p>
+      <div>
+        <%for(var i = 0; i < subjects.length; i++){%>
+        <div>
+          <input
+            type="checkbox"
+            name="<%=subjects[i] %>"
+            <%
+            if(user.subjects.includes(subjects[i])){%>
+          <%= "checked" %> <%}%>/>
+
+          <label for="<%=subjects[i] %>"><%=subjects[i] %></label>
+        </div>
+        <%}%>
+      </div>
+    </div>
+<div class="input-group2">
+    <p>Role</p>
+    <div>
+      <div>
+        <input type="radio" name="role" value="student" <%if(user.role ===
+        "student"){%> <%= "checked" %> <%}%> />
+        <label for="role">Student</label>
+      </div>
+      <div>
+        <input type="radio" name="role" value="mentor" <%if(user.role ===
+        "mentor"){%> <%= "checked" %> <%}%> />
+        <label for="role">Mentor</label>
+      </div>
+    </div>
+</div>
+    <button type="submit" class="auth-submit">Update</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="profile">
+  <h1>Profile</h1>
+  <div class="profile-details">
+    <div class="profile-group">
+      <div class="profile-label">Name</div>
+      <%= user.name %>
+    </div>
+    <div class="profile-group">
+      <div class="profile-label">Email</div>
+      <%= user.email %>
+    </div>
+    <div class="profile-group">
+      <div class="profile-label">Role</div>
+      <%= user.role%>
+    </div>
+
+    <div class="profile-group2">
+      <div class="profile-label">subject(s)</div>
+      <div class="profile-subjects">
+        <%for(var i = 0; i < user.subjects.length; i++){%><a
+          href="/subjects/<%= user.subjects[i]%>"
+          class="sub-single"
+        >
+          <%= user.subjects[i]%> </a
+        ><%}%>
+      </div>
+    </div>
+
+    <a href="/updateprofile">
+      <button class="auth-submit">Update Profile</button>
+    </a>
+
+    <a href="/users/logout">
+      <button class="auth-submit">Logout</button>
+    </a>
+  </div>
+</div>

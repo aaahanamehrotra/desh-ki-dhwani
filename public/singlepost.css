@@ -1,0 +1,29 @@
+.single-post {
+  margin: 1vw 5vw;
+}
+
+.single-details {
+  margin: 2vw 0;
+}
+
+.user > pre > span,
+.date-time > pre > span,
+.post-subject > pre > span {
+  font-weight: bold;
+}
+
+.view-all-wrapper {
+  display: flex;
+  justify-content: start;
+}
+.view-all {
+  margin: auto;
+  display: flex;
+  background-color: var(--secondary-color);
+  height: 40px;
+  width: 180px;
+  margin-top: 2vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}

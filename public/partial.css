@@ -1,0 +1,19 @@
+.success {
+  border: 1px solid green;
+  background-color: #b6cec2;
+}
+
+.error {
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.success,
+.error {
+  margin: 2px auto;
+  padding: 6px;
+  border-radius: 2px;
+  width: 240px;
+  text-align: center;
+  font-size: small;
+}

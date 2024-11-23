@@ -1,0 +1,24 @@
+<h1 class="single-title"><%= data.title %></h1>
+<div class="single-post">
+  <div class="single-details">
+    <div class="user">
+      <pre>Posted by <span><%= data.username %></span></pre>
+    </div>
+    <% let d = String(data.createdAt.getDate()).padStart(2, '0') %> <% let m =
+    String(data.createdAt.getMonth() + 1).padStart(2, '0') %> <% let y =
+    data.createdAt.getFullYear() %>
+    <div class="date-time">
+      <pre>Posted on <span><%= d + '/' + m + '/' + y %></span> at<span><%=
+        data.createdAt.toUTCString().slice(16) %></span></pre>
+    </div>
+    <div class="post-subject">
+      <pre>Posted in <span><%= data.subject %></span></pre>
+    </div>
+  </div>
+
+  <div class="single-article"><%= data.article %></div>
+</div>
+
+<div class="view-all-wrapper">
+  <a href="<%=`/subjects/${data.subject}`%>" class="view-all">View all posts</a>
+</div>

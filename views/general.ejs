@@ -1,0 +1,31 @@
+<h1>Discussion Forum</h1>
+<div class="create-wrapper">
+  <a href="/create" class="create">Create New Post</a>
+</div>
+<div class="all-posts">
+  <% for (let i = 0; i < data.length; i++) { %> <% let d =
+  String(data[i].createdAt.getDate()).padStart(2, '0') %> <% let m =
+  String(data[i].createdAt.getMonth() + 1).padStart(2, '0') %> <% let y =
+  data[i].createdAt.getFullYear() %> <% let x = `/blog/${data[i]._id}` %>
+
+  <div class="post">
+    <div class="post-body">
+      <h2 class="post-title"><%= data[i].title %></h2>
+
+      <div class="details">
+        <div class="username">By <%= data[i].username %></div>
+        <div class="date">
+          <%= d + '/' + m + '/' + y %> <%=
+          data[i].createdAt.toUTCString().slice(16) %>
+        </div>
+      </div>
+      <div class="article"><%= data[i].article%></div>
+    </div>
+
+    <div class="read-div">
+      <a href="<%= x %>">Read More</a>
+    </div>
+  </div>
+
+  <% } %>
+</div>

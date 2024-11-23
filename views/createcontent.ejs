@@ -1,0 +1,49 @@
+<h1 class="heading">Create New Post</h1>
+<%- include ("./partials/errorcreate"); %>
+<form action="/subjectposts" method="POST" class="create-form">
+  <div class="create-group">
+    <label for="username" class="create-field">Username</label>
+    <input
+      readonly
+      type="text"
+      id="username"
+      name="username"
+      class="create-field"
+      value="<%= user.name %>"
+      readonly
+    />
+  </div>
+  <div class="create-group">
+    <label class="create-field" for="subject">Choose a subject:</label>
+    <select name="subject" class="create-field">
+      <option value="">--Select a subject--</option>
+      <%for(var i = 0; i < user.subjects.length; i++){%>
+      <option value="<%=user.subjects[i]%>"><%=user.subjects[i]%></option>
+      <%}%>
+    </select>
+  </div>
+  <div class="create-group">
+    <label for="title" class="create-field">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Enter Title"
+      class="create-field"
+      value="<%= typeof title != 'undefined' ? title : '' %>"
+    />
+  </div>
+  <div class="create-group">
+    <label for="article" class="create-field">Article</label>
+    <textarea
+      type="text"
+      id="article"
+      name="article"
+      placeholder="Enter Article"
+      class="create-field"
+    >
+    <%= typeof article != 'undefined' ? article : '' %>
+    </textarea>
+  </div>
+  <button class="auth-submit">Post</button>
+</form>
